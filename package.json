@@ -18,12 +18,14 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build",
-  "start": "node Backend/index.js", 
-  "build": "echo 'Nothing to build'"
+    "deploy": "gh-pages -d build",
+    "start": "node Backend/index.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "both": "concurrently \"npm run start\" \"nodemon backend/index.js"
+    "both": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon Backend/index.js",
+    "client": "npm start --prefix src"
   },
   "eslintConfig": {
     "extends": [
